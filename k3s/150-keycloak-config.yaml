@@ -2,11 +2,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: keycloak
-  namespace: keycloak
 data:
   KEYCLOAK_USER: admin@keycloak
   KEYCLOAK_MGMT_USER: mgmt@keycloak
-  JAVA_OPTS_APPEND: '-Dkeycloak.profile.feature.docker=enabled'
+  JAVA_OPTS_APPEND: '-Djboss.bind.address.management=0.0.0.0'
   PROXY_ADDRESS_FORWARDING: 'true'
   KEYCLOAK_LOGLEVEL: INFO
   ROOT_LOGLEVEL: INFO
