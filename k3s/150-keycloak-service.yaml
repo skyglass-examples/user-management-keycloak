@@ -7,8 +7,8 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      name: web
+      name: http
       port: 80
-      targetPort: 9990
+      targetPort: 8080
   selector:
     app: keycloak

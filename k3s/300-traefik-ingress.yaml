@@ -50,7 +50,7 @@ spec:
   - host: "keycloak.skycomposer.net"
     http:
       paths:
-      - path: "/keycloak"
+      - path: "/"
         backend:
           serviceName: "keycloak"
           servicePort: 80

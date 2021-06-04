@@ -21,8 +21,8 @@ spec:
           image: jboss/keycloak:12.0.4
           imagePullPolicy: Always
           ports:
-            - containerPort: 9990
-              hostPort: 9990
+            - containerPort: 8080
+              hostPort: 8080
           volumeMounts:
             - name: keycloak-data
               mountPath: /opt/jboss/keycloak/standalone/data
@@ -52,6 +52,11 @@ spec:
                 configMapKeyRef:
                   name: keycloak
                   key: PROXY_ADDRESS_FORWARDING
+            - name: KEYCLOAK_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: keycloak
+                  key: KEYCLOAK_HOSTNAME
             - name: KEYCLOAK_LOGLEVEL
               valueFrom:
                 configMapKeyRef:
